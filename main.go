@@ -1,11 +1,10 @@
 package main
 
 import (
-	_ "github.com/juusechec/jwt-beego-implementation/routers"
 	"github.com/astaxie/beego"
+	_ "github.com/juusechec/jwt-beego-implementation/routers"
 )
 
 func main() {
 	beego.Run()
 }
-
