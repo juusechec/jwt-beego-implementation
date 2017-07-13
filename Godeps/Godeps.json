@@ -1,0 +1,61 @@
+{
+	"ImportPath": "github.com/juusechec/jwt-beego-implementation",
+	"GoVersion": "go1.6",
+	"GodepVersion": "v79",
+	"Deps": [
+		{
+			"ImportPath": "github.com/astaxie/beego",
+			"Comment": "v1.8.3",
+			"Rev": "cab8458c1c4a5a3b4bf5192922be620e6dede15b"
+		},
+		{
+			"ImportPath": "github.com/astaxie/beego/config",
+			"Comment": "v1.8.3",
+			"Rev": "cab8458c1c4a5a3b4bf5192922be620e6dede15b"
+		},
+		{
+			"ImportPath": "github.com/astaxie/beego/context",
+			"Comment": "v1.8.3",
+			"Rev": "cab8458c1c4a5a3b4bf5192922be620e6dede15b"
+		},
+		{
+			"ImportPath": "github.com/astaxie/beego/context/param",
+			"Comment": "v1.8.3",
+			"Rev": "cab8458c1c4a5a3b4bf5192922be620e6dede15b"
+		},
+		{
+			"ImportPath": "github.com/astaxie/beego/grace",
+			"Comment": "v1.8.3",
+			"Rev": "cab8458c1c4a5a3b4bf5192922be620e6dede15b"
+		},
+		{
+			"ImportPath": "github.com/astaxie/beego/logs",
+			"Comment": "v1.8.3",
+			"Rev": "cab8458c1c4a5a3b4bf5192922be620e6dede15b"
+		},
+		{
+			"ImportPath": "github.com/astaxie/beego/session",
+			"Comment": "v1.8.3",
+			"Rev": "cab8458c1c4a5a3b4bf5192922be620e6dede15b"
+		},
+		{
+			"ImportPath": "github.com/astaxie/beego/toolbox",
+			"Comment": "v1.8.3",
+			"Rev": "cab8458c1c4a5a3b4bf5192922be620e6dede15b"
+		},
+		{
+			"ImportPath": "github.com/astaxie/beego/utils",
+			"Comment": "v1.8.3",
+			"Rev": "cab8458c1c4a5a3b4bf5192922be620e6dede15b"
+		},
+		{
+			"ImportPath": "github.com/dgrijalva/jwt-go",
+			"Comment": "v3.0.0-20-ga539ee1",
+			"Rev": "a539ee1a749a2b895533f979515ac7e6e0f5b650"
+		},
+		{
+			"ImportPath": "github.com/juusechec/jwt-beego",
+			"Rev": "817fa9f3eded87b7fc5c3f27d72165c73ec9feaa"
+		}
+	]
+}
