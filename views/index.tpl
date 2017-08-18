@@ -78,6 +78,9 @@
     <h1 class="logo">Welcome to Beego</h1>
     <div class="description">
       Beego is a simple & powerful Go web framework which is inspired by tornado and sinatra.
+      <br/>
+      This is an example, please use:
+      <a href="user">http://localhost:8000/user</a>
     </div>
   </header>
   <footer>

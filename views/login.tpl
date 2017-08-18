@@ -75,6 +75,10 @@
           console.log('Finish:', xhr.response);
           window.alert('xhr.response: ' + xhr.response);
         }
+        if (xhr.readyState == 4 && xhr.status == 401) {
+          console.log('401 Unauthorized:', xhr.response);
+          window.alert('401 Unauthorized: ' + xhr.response);
+        }
       };
       xhr.send();
     };
@@ -108,6 +112,10 @@
         if (xhr.readyState == 4 && xhr.status == 200) {
           console.log('Finish:', xhr.response);
           window.alert('xhr.response: ' + xhr.response);
+        }
+        if (xhr.readyState == 4 && xhr.status == 401) {
+          console.log('401 Unauthorized:', xhr.response);
+          window.alert('401 Unauthorized: ' + xhr.response);
         }
       };
       var objeto = {
