@@ -2,16 +2,19 @@ package jwtbeego
 
 import (
 	"crypto/rsa"
+	"errors"
 	"io/ioutil"
 	"log"
-	"errors"
 
 	"github.com/dgrijalva/jwt-go"
 )
 
+// EasyToken is an Struct to encapsulate username and expires as parameter
 type EasyToken struct {
+	// Username is the name of the user
 	Username string
-	Expires  int64
+	// Expires is a timestamp with expiration date
+	Expires int64
 }
 
 // https://gist.github.com/cryptix/45c33ecf0ae54828e63b
@@ -49,6 +52,7 @@ func init() {
 	}
 }
 
+// GetToken is a function that exposes the method to get a simple token for jwt
 func (e EasyToken) GetToken() (string, error) {
 
 	// Create the Claims
@@ -57,7 +61,7 @@ func (e EasyToken) GetToken() (string, error) {
 		Issuer:    e.Username,
 	}
 
-	token := jwt.NewWithClaims(jwt.GetSigningMethod("RS256"), claims)
+	token := jwt.NewWithClaims(jwt.SigningMethodRS256, claims)
 	tokenString, err := token.SignedString(mySigningKey)
 	if err != nil {
 		log.Fatal(err)
@@ -66,11 +70,12 @@ func (e EasyToken) GetToken() (string, error) {
 	return tokenString, err
 }
 
+// ValidateToken get token strings and return if is valid or not
 func (e EasyToken) ValidateToken(tokenString string) (bool, error) {
 	// Token from another example.  This token is expired
 	//var tokenString = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmb28iOiJiYXIiLCJleHAiOjE1MDAwLCJpc3MiOiJ0ZXN0In0.HE7fK0xOQwFEr4WDgRWj4teRPZ6i3GLwD5YCm6Pwu_c"
 	if tokenString == "" {
-		return false, errors.New("Token vacio")
+		return false, errors.New("token is empty")
 	}
 
 	token, err := jwt.Parse(tokenString, func(token *jwt.Token) (interface{}, error) {
@@ -78,8 +83,8 @@ func (e EasyToken) ValidateToken(tokenString string) (bool, error) {
 	})
 
 	if token == nil {
-		log.Fatal(err)
-		return false, errors.New("No funcionó")
+		log.Println(err)
+		return false, errors.New("not work")
 	}
 
 	if token.Valid {

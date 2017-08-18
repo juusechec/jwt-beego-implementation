@@ -55,7 +55,7 @@
 		},
 		{
 			"ImportPath": "github.com/juusechec/jwt-beego",
-			"Rev": "817fa9f3eded87b7fc5c3f27d72165c73ec9feaa"
+			"Rev": "7f7b8420c3ff794479af87d70c8b08694a300318"
 		}
 	]
 }

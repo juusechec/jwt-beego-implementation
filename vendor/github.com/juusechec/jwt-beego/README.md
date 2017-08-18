@@ -97,7 +97,6 @@ import (
 
 //Se genera un tipo Controller que hereda de beego.Controller
 type Controller struct {
-	DisableJWT false
 	beego.Controller
 }
 
@@ -109,16 +108,14 @@ type Controller struct {
 //var s *string //var r **string = &s //fmt.Println(r)//0x1040a120
 func (c *Controller) Prepare() {
 	//Lo que quieras hacer en todos los controladores
-	c.DisableJWT == false {
-		tokenString := c.Ctx.Input.Query("tokenString")
+	tokenString := c.Ctx.Input.Query("tokenString")
 
-		et := jwtbeego.EasyToken{}
-		valido, _ := et.ValidateToken(tokenString)
-		if !valido {
-			c.Ctx.Output.SetStatus(401)
-			c.Data["json"] = "Permission Deny"
-			c.ServeJSON()
-		}
+	et := jwtbeego.EasyToken{}
+	valido, _ := et.ValidateToken(tokenString)
+	if !valido {
+		c.Ctx.Output.SetStatus(401)
+		c.Data["json"] = "Permission Deny"
+		c.ServeJSON()
 	}
 	return
 }
@@ -134,7 +131,7 @@ package controllers
 
 import (
 	...
-	"github.com/juusechec/oas_be_cancelacion_semestre/myBeego"
+	"github.com/juusechec/jwt-beego-implementation/myBeego"
 	"github.com/juusechec/jwt-beego"
 )
 
@@ -146,6 +143,9 @@ type MiObjetoController struct {
 
 ...
 ```
+
+## Ejemplo de uso:
+- https://github.com/juusechec/jwt-beego-implementation
 
 Se basa en:
 * https://github.com/someone1/gcp-jwt-go
