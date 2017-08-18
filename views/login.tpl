@@ -73,6 +73,7 @@
       xhr.onreadystatechange = function(e) {
         if (xhr.readyState == 4 && xhr.status == 200) {
           console.log('Finish:', xhr.response);
+          window.alert('xhr.response: ' + xhr.response);
         }
       };
       xhr.send();
@@ -106,6 +107,7 @@
       xhr.onreadystatechange = function(e) {
         if (xhr.readyState == 4 && xhr.status == 200) {
           console.log('Finish:', xhr.response);
+          window.alert('xhr.response: ' + xhr.response);
         }
       };
       var objeto = {
